@@ -1,4 +1,4 @@
-export default class Person {
+export default abstract class Person {
   constructor(protected firstName: string, protected lastName: string) {}
 
   printFullName(): string {
@@ -7,7 +7,5 @@ export default class Person {
     return prisistatymas;
   }
 
-  calcPay() {
-    throw new Error('reikia aprasyti calcPay');
-  }
+  abstract calcPay(): number;
 }

@@ -8,8 +8,5 @@ export default class Person {
         console.log(prisistatymas);
         return prisistatymas;
     }
-    calcPay() {
-        throw new Error('reikia aprasyti calcPay');
-    }
 }
 //# sourceMappingURL=person.class.js.map

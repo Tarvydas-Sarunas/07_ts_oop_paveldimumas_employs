@@ -28,3 +28,11 @@ console.table(freeArr);
 
 const tasksArr: MyTask[] = [new MyTask('footer', 500), new MyTask('header', 300), new MyTask('main', 200), new MyTask('navigation wih react', 400)];
 console.table(tasksArr);
+
+freeArr[0].assingJob(tasksArr[0]);
+freeArr[0].assingJob(tasksArr[1]);
+
+freeArr[0].completeTaskFromArr(tasksArr[0].id);
+
+console.table(tasksArr);
+console.log('freeArr[0] ===', freeArr[0]);

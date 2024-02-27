@@ -13,5 +13,15 @@ export default class Freelancer extends Person {
         this.jobs.push(newJob);
         console.table(this.jobs);
     }
+    completeTaskFromArr(idToComplete) {
+        const found = this.jobs.find((jObj) => jObj.id === idToComplete);
+        console.log('found ===', found);
+        if (!found)
+            return console.warn('darbas nerastas');
+        found.isDone = true;
+    }
+    calcPay() {
+        return 3;
+    }
 }
 //# sourceMappingURL=freelancer.class.js.map
