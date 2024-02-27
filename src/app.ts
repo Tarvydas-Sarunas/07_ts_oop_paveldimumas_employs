@@ -31,8 +31,16 @@ console.table(tasksArr);
 
 freeArr[0].assingJob(tasksArr[0]);
 freeArr[0].assingJob(tasksArr[1]);
+freeArr[0].assingJob(tasksArr[2]);
+freeArr[1].assingJob(tasksArr[1]);
 
 freeArr[0].completeTaskFromArr(tasksArr[0].id);
+freeArr[0].completeTaskFromArr(tasksArr[1].id);
+freeArr[0].completeTaskFromArr(tasksArr[2].id);
 
 console.table(tasksArr);
 console.log('freeArr[0] ===', freeArr[0]);
+console.log('freeArr[1] ===', freeArr[1]);
+
+console.log('freeArr[0].calcPay()', freeArr[0].calcPay());
+const pay = freeArr[0].calcPay();

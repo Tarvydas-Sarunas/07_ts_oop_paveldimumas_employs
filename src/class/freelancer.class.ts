@@ -26,6 +26,12 @@ export default class Freelancer extends Person {
   }
 
   override calcPay(): number {
-    return 3;
+    // atlyginimo apskaiciavimas
+    // atrinkti tik atliktus darbus
+    const completedTAsk: MyTask[] = this.jobs.filter((tObj) => tObj.isDone === true);
+    const sum: number = completedTAsk.reduce((tot, tObj) => tot + tObj.amount, 0);
+
+    this.jobs = this.jobs.filter((tObj) => tObj.isDone !== true);
+    return sum;
   }
 }
