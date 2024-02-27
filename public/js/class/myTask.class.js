@@ -1,9 +1,11 @@
-export default class MyTask {
+class MyTask {
     constructor(title, amount) {
         this.title = title;
         this.amount = amount;
-        this.id = 1;
+        this.id = ++MyTask.count;
         this.isDone = false;
     }
 }
+MyTask.count = 0;
+export default MyTask;
 //# sourceMappingURL=myTask.class.js.map
