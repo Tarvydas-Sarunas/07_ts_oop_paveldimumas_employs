@@ -33,6 +33,9 @@ console.table(freeArr);
 const tasksArr: MyTask[] = [new MyTask('footer', 500), new MyTask('header', 300), new MyTask('main', 200), new MyTask('navigation wih react', 400)];
 console.table(tasksArr);
 
+UI.addOneFreel(freeArr[0]);
+UI.addOneFreel(freeArr[1]);
+
 freeArr[0].assingJob(tasksArr[0]);
 freeArr[0].assingJob(tasksArr[1]);
 freeArr[0].assingJob(tasksArr[2]);
