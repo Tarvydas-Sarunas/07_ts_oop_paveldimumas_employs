@@ -15,5 +15,8 @@ export default class Employee extends Person {
         this.hoursWorked = 0;
         return alga;
     }
+    get payPerHour() {
+        return this.hourlyPay;
+    }
 }
 //# sourceMappingURL=employee.class.js.map

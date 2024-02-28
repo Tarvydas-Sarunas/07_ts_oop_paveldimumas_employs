@@ -1,13 +1,17 @@
 import Employee from './class/employee.class.js';
 import Freelancer from './class/freelancer.class.js';
 import MyTask from './class/myTask.class.js';
+import UI from './class/ui.class.js';
 // import Freelancer from './class/freelancer.class.js';
 // import Person from './class/person.class.js';
 
 console.log('hi from ts');
 
-const workingPplArr: Employee[] = [new Employee('James', 'Bond', 100), new Employee('Alex', 'BuazeFree', 50)];
+const workingPplArr: Employee[] = [new Employee('James', 'Bond', 100), new Employee('Alex', 'Buaze', 50)];
 console.table(workingPplArr);
+
+UI.addOneEmpl(workingPplArr[0]);
+UI.addOneEmpl(workingPplArr[1]);
 
 workingPplArr[0].work(60);
 
