@@ -44,3 +44,4 @@ console.log('freeArr[1] ===', freeArr[1]);
 
 console.log('freeArr[0].calcPay()', freeArr[0].calcPay());
 const pay = freeArr[0].calcPay();
+console.log('pay ===', pay);
