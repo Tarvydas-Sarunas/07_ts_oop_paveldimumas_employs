@@ -10,18 +10,18 @@ export default class Freelancer extends Person {
 
   assingJob(newJob: MyTask) {
     if (!(newJob instanceof MyTask)) {
-      console.warn('netikras darbas', newJob);
+      // console.warn('netikras darbas', newJob);
       return;
     }
     this.jobs.push(newJob);
-    console.table(this.jobs);
+    // console.table(this.jobs);
   }
 
   public completeTaskFromArr(idToComplete: number): void {
     // sukti cikla per darbu masyva surasti darba su id lygiu su id tu complete ir padaryti ji baigtu
     const found: MyTask | undefined = this.jobs.find((jObj) => jObj.id === idToComplete);
-    console.log('found ===', found);
-    if (!found) return console.warn('darbas nerastas');
+    // console.log('found ===', found);
+    if (!found) return; // console.warn('darbas nerastas');
     found.isDone = true;
   }
 

@@ -1,9 +1,14 @@
 export default abstract class Person {
-  constructor(protected firstName: string, protected lastName: string) {}
+  private static count = 0;
+  public id: number;
+
+  constructor(protected firstName: string, protected lastName: string) {
+    this.id = ++Person.count;
+  }
 
   printFullName(): string {
     const prisistatymas = `${this.firstName} ${this.lastName}`;
-    console.log(prisistatymas);
+    // console.log(prisistatymas);
     return prisistatymas;
   }
 

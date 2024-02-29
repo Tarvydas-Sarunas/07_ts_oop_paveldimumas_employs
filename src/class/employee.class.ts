@@ -8,13 +8,13 @@ export default class Employee extends Person {
   }
 
   public work(howMany: number) {
-    console.log(`--${this.firstName} worked for ${howMany} hours`);
+    // console.log(`--${this.firstName} worked for ${howMany} hours`);
     this.hoursWorked += howMany;
   }
 
   public calcPay(): number {
     const alga = this.hoursWorked * this.hourlyPay;
-    console.log(`${this.firstName} ismoketa ${alga.toFixed(2)} €`);
+    // console.log(`${this.firstName} ismoketa ${alga.toFixed(2)} €`);
 
     this.hoursWorked = 0;
     return alga;

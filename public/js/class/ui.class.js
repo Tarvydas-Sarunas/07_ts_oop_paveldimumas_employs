@@ -6,7 +6,7 @@ class UI {
         const payEl = createHtmlEL('p', { class: 'mb-0' }, emObj.payPerHour.toString());
         liEl.append(titleEl, payEl);
         if (UI.employeeUlEl === null)
-            return console.warn('toks elementas nerastas');
+            return;
         UI.employeeUlEl.append(liEl);
     }
     static addOneFreel(emObj) {
@@ -15,8 +15,47 @@ class UI {
         const payEl = createHtmlEL('p', { class: 'mb-0' }, emObj.calcPay().toString());
         liEl.append(titleEl, payEl);
         if (UI.freelancerUlEl === null)
-            return console.warn('toks elementas nerastas');
+            return;
         UI.freelancerUlEl.append(liEl);
+    }
+    static renderEmplSelect(arr) {
+        const selectEl = document.getElementById('empl-sel');
+        if (selectEl === null)
+            return;
+        arr.forEach((eObj) => {
+            const opt = createHtmlEL('option', { value: eObj.id.toString() }, eObj.printFullName());
+            selectEl.append(opt);
+        });
+    }
+    static addHoursUi(arr) {
+        const formEl = document.getElementById('add-hours');
+        const selectEl = document.getElementById('empl-sel');
+        const inputEl = document.getElementById('how-many');
+        if (formEl === null || selectEl === null || inputEl === null) {
+            throw new Error('tokie lementai nerasta');
+        }
+        formEl.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const witchEmployee = selectEl.value;
+            const howMutch = +inputEl.value || 0;
+            const amployeeFound = arr.find((eObj) => eObj.id === +witchEmployee);
+            if (amployeeFound === undefined)
+                return;
+            amployeeFound.work(howMutch);
+            formEl.reset();
+        });
+    }
+    static printAlgos(arr) {
+        const algosBody = document.getElementById('algos-body');
+        arr.forEach((wObj) => {
+            const trEl = document.createElement('tr');
+            const nameCell = createHtmlEL('td', {}, wObj.printFullName());
+            const payCell = createHtmlEL('td', {}, wObj.calcPay().toString());
+            trEl.append(nameCell, payCell);
+            if (algosBody === null)
+                throw new Error('nerastas table');
+            algosBody.append(trEl);
+        });
     }
 }
 UI.employeeUlEl = document.getElementById('empl');
