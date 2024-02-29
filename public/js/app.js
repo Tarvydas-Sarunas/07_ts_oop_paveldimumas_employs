@@ -9,12 +9,7 @@ UI.addOneEmpl(workingPplArr[1]);
 UI.addHoursUi(workingPplArr);
 workingPplArr[0].work(60);
 workingPplArr.forEach((eObj) => {
-});
-const nameAndPay = workingPplArr.map((eObj) => {
-    return {
-        name: eObj.printFullName(),
-        pay: eObj.calcPay(),
-    };
+    console.log('alga', eObj.calcPay());
 });
 const freeArr = [new Freelancer('Tom', 'Crus'), new Freelancer('Evgenij', 'Padubnij')];
 const tasksArr = [new MyTask('footer', 500), new MyTask('header', 300), new MyTask('main', 200), new MyTask('navigation wih react', 400)];

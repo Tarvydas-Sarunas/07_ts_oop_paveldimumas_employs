@@ -50,7 +50,7 @@ class UI {
         arr.forEach((wObj) => {
             const trEl = document.createElement('tr');
             const nameCell = createHtmlEL('td', {}, wObj.printFullName());
-            const payCell = createHtmlEL('td', {}, wObj.calcPay().toString());
+            const payCell = createHtmlEL('td', {}, `${wObj.calcPay().toFixed(2)} €`);
             trEl.append(nameCell, payCell);
             if (algosBody === null)
                 throw new Error('nerastas table');

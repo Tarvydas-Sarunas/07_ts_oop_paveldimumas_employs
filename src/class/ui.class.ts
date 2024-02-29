@@ -84,7 +84,7 @@ export default class UI {
     arr.forEach((wObj) => {
       const trEl = document.createElement('tr');
       const nameCell = createHtmlEL<HTMLTableCellElement>('td', {}, wObj.printFullName());
-      const payCell = createHtmlEL<HTMLTableCellElement>('td', {}, wObj.calcPay().toString());
+      const payCell = createHtmlEL<HTMLTableCellElement>('td', {}, `${wObj.calcPay().toFixed(2)} €`);
       trEl.append(nameCell, payCell);
       if (algosBody === null) throw new Error('nerastas table');
       algosBody.append(trEl);

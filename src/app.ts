@@ -44,15 +44,15 @@ UI.addHoursUi(workingPplArr);
 workingPplArr[0].work(60);
 
 workingPplArr.forEach((eObj) => {
-  // console.log('alga', eObj.calcPay());
+  console.log('alga', eObj.calcPay());
 });
 
-const nameAndPay: { name: string; pay: number }[] = workingPplArr.map((eObj) => {
-  return {
-    name: eObj.printFullName(),
-    pay: eObj.calcPay(),
-  };
-});
+// const nameAndPay: { name: string; pay: number }[] = workingPplArr.map((eObj) => {
+//   return {
+//     name: eObj.printFullName(),
+//     pay: eObj.calcPay(),
+//   };
+// });
 // console.log('nameAndPay ===', nameAndPay);
 
 const freeArr: Freelancer[] = [new Freelancer('Tom', 'Crus'), new Freelancer('Evgenij', 'Padubnij')];
